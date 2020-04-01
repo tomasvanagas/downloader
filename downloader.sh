@@ -15,7 +15,7 @@ do
         if [ $(echo $FILES | wc -w) -gt 0 ]
         then
                 FILES=$(echo $FILES | sed 's/ /,/g');
-                rsync -avz --remove-source-files -e "ssh -p $REMOTEPORT" $REMOTEHOST@$REMOTEHOST:$REMOTEPATH$FILES $LOCALPATH
+                rsync -avz --remove-source-files -e "ssh -p $REMOTEPORT" $REMOTEUSER@$REMOTEHOST:$REMOTEPATH$FILES $LOCALPATH
         fi
         echo "[*] Sleeping..."
         sleep 600
